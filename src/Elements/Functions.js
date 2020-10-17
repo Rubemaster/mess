@@ -61,7 +61,7 @@ export function contactsClickHandler() {
 }
 export function loadData() {
   fetch(
-    "https://rubenrick.online/ChattaNu/load_conversations.php?session_code=X"
+    "https://rubenrick.online/ChattaNu/load_conversations.php?session_code=XX"
   )
     .then((response) => {
       return response.json();
