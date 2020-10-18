@@ -2,6 +2,10 @@ import React, { useCallback } from "react";
 import { Button, Form } from "react-bootstrap";
 import { createUseStyles } from "react-jss";
 import { useHistory } from "react-router-dom";
+import { GoogleLogin } from "react-google-login";
+const responseGoogle = (response) => {
+  console.log(response);
+};
 const MessagesStyling = createUseStyles({
   container: {
     flexGrow: 1,
@@ -80,6 +84,14 @@ function LoginFunction(props) {
             >
               Login
             </Button>
+            <GoogleLogin
+              clientId="319949883115-r4tv55p4dlpatcdgrs90pevs79md51fa.apps.googleusercontent.com"
+              buttonText="Login"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={"single_host_origin"}
+            />
+            ,
           </div>
         </div>
       </div>
