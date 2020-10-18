@@ -24,7 +24,8 @@ export class ChatAreaComponent extends React.Component {
       contactsHeight: 60,
       messages: [],
       conversation: 0,
-      contacts: []
+      contacts: [],
+      session: this.props.session
     };
     this.scrollHandler = scrollHandler.bind(this);
     this.contactsClickHandler = contactsClickHandler.bind(this);

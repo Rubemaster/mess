@@ -29,7 +29,9 @@ export function scrollHandler() {
 }
 export function contactClickFunc(contactID, isHost) {
   fetch(
-    "https://rubenrick.online/ChattaNu/load_messages.php?session_code=XX&target_conversation=" +
+    "https://rubenrick.online/ChattaNu/load_messages.php?session_code=" +
+      this.state.session +
+      "&target_conversation=" +
       contactID
   )
     .then((response) => {
@@ -61,7 +63,8 @@ export function contactsClickHandler() {
 }
 export function loadData() {
   fetch(
-    "https://rubenrick.online/ChattaNu/load_conversations.php?session_code=XX"
+    "https://rubenrick.online/ChattaNu/load_conversations.php?session_code=" +
+      this.state.session
   )
     .then((response) => {
       return response.json();
@@ -89,7 +92,11 @@ export function loadData() {
 }
 function targetOnClick() {
   const inputField = this.sendMessageField.current;
-  if (inputField.value && inputField.value !== "" && this.contacts.length > 0) {
+  if (
+    inputField.value &&
+    inputField.value !== "" &&
+    this.state.contacts.length > 0
+  ) {
     console.log(this.state.messages);
     this.setState((state) => ({
       messages: state.messages.concat([
@@ -97,7 +104,9 @@ function targetOnClick() {
       ])
     }));
     let fetchString =
-      "https://rubenrick.online/ChattaNu/send_message.php?session_code=XX&message=" +
+      "https://rubenrick.online/ChattaNu/send_message.php?session_code=" +
+      this.state.session +
+      "&message=" +
       inputField.value +
       "&conversation_id=" +
       this.state.conversation;
