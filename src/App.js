@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 import { ChatAreaComponent } from "./Elements/ChatAreaManager";
 import { LoginComponent } from "./Elements/LoginManager.js";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const useStyles = createUseStyles({
   containColumn: {
     width: "100%",
@@ -95,6 +95,11 @@ function AppFunction(props) {
                 <div className={classes.lockVerticalHeightStatic}>
                   {<LoginComponent updateSession={props.updateSession} />}
                 </div>
+              </Route>
+              <Route path="/">
+                <Link to="/login" style={{color: "white"}}><u>Login</u></Link>
+                <br/>
+                <Link to="/chat" style={{color: "white"}}><u>Chat</u></Link>
               </Route>
             </Switch>
           </div>

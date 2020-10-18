@@ -22,7 +22,7 @@ const MessagesStyling = createUseStyles({
     flexShrink: 1,
     borderRadius: 4,
     margin: 30,
-    padding: 10
+    padding: "10px 10px 0px 10px"
   },
   customFormControl: {
     maxHeight: "100%",
@@ -33,7 +33,8 @@ const MessagesStyling = createUseStyles({
     width: "100%",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginBottom: 10
   },
   title: {
     color: "white",
@@ -86,12 +87,19 @@ function LoginFunction(props) {
             </Button>
             <GoogleLogin
               clientId="319949883115-r4tv55p4dlpatcdgrs90pevs79md51fa.apps.googleusercontent.com"
-              buttonText="Login"
+              render={(renderProps) => (
+                <Button
+                  className={classes.customButton}
+                  onClick={renderProps.onClick}
+                  disabled={renderProps.disabled}
+                >
+                  Access with Google
+                </Button>
+              )}
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
               cookiePolicy={"single_host_origin"}
             />
-            ,
           </div>
         </div>
       </div>
