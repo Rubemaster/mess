@@ -4,7 +4,7 @@ MessengerApp is a React App, that works as a messenger, for online communication
 
 ## CodeSandbox.io
 
-Check out the codesandbox here: ```https://codesandbox.io/s/flamboyant-shtern-fd6xm```
+Check out the codesandbox here: ```https://codesandbox.io/s/awesome-pine-u190p```
 
 ## Usage
 
